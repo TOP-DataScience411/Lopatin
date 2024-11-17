@@ -45,3 +45,9 @@ def int_base(number:str,base:int,new_base:int):
         ans +=str(int(less))
         less-=int(less)
         if not less:return ans
+        
+        
+        # D:\top academy\Data science\Homework\2024.11.10>python -i 7.py
+# >>> print(int_base('ff001.12', 16, 2))
+# 11111111000000000001.0001001
+# >>>
