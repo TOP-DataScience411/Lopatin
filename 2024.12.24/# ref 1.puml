@@ -1,0 +1,57 @@
+@startuml
+
+'!theme monokai from ..\.styles
+
+hide abstract empty members
+
+abstract list
+
+class Point {
+    #x: <i>float</i>
+    #y: <i>float</i>
+    ..<font size=12><i> getters </i></font>..
+    +{method}x → <i>float</i>
+    +{method}y → <i>float</i>
+    ..<font size=12><i> setters </i></font>..
+    +{method}x() .. <i>TypeError</i>
+    +{method}y() .. <i>TypeError</i>
+    ..<font size=12><i> methods </i></font>..
+    __init__()
+    __eq__()
+    __repr__()
+    __str__()
+}
+
+class Line {
+    #start: Point
+    #end: Point
+    #length: <i>float</i>
+    ..<font size=12><i> getters </i></font>..
+    +{method}start → Point
+    +{method}end → Point
+    +{method}length → <i>float</i>
+    ..<font size=12><i> setters </i></font>..
+    +{method}start(<font size=14> new_point: Point </font>)
+    +{method}end(<font size=14> new_point: Point </font>)
+    +{method}length() .. <i>TypeError</i>
+    ..<font size=12><i> methods </i></font>..
+    __init__()
+    __repr__()
+    __str__()
+    #{static}length_calc() → <i>float</i>
+'    #{static}length_calc( <font size=14>point1: Point</font>, <font size=14>point2: Point</font> ) → <i>float</i>
+}
+
+class Polygon {
+    ..<font size=12><i> getters </i></font>..
+    +perimeter() → <i>float</i>
+    ..<font size=12><i> methods </i></font>..
+    __init__()
+    -is_closed() → <i>bool</i>
+}
+
+list <|-- Polygon
+Line o-left- Point
+Polygon o-left- Line
+
+@enduml
