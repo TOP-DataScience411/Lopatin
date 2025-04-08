@@ -15,7 +15,6 @@ def json_from_html(URL:str,re_pattern,encoding = None):
         if encoding is None:
             detected_encoding = chardet.detect(HTML)['encoding']
             encoding = detected_encoding if detected_encoding else 'utf-8'
-            print(encoding)
         HTML = HTML.decode(encoding)
 
 
